@@ -6,6 +6,7 @@ package Lec6.VBox_HBox;
 
 import javafx.application.Application;
 import static javafx.application.Application.launch;
+import javafx.geometry.Insets;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.layout.HBox;
@@ -22,7 +23,9 @@ public class HBoxExample extends Application{
         Button btn1 = new Button("Button 1");
         Button btn2 = new Button("Button 2");
         Button btn3 = new Button("Button 3");
-        HBox box = new HBox(10,btn1, btn2, btn3);
+        HBox box = new HBox(btn1, btn2, btn3);
+        box.setSpacing(10);
+        box.setPadding(new  Insets(10));
         
         Scene scene = new Scene(box, 250, 400);
         stage.setTitle("VBox Example");

@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package Lec6.VBox_HBox;
+package Lec6.EveryThingTogether;
 
 import javafx.application.Application;
 import javafx.geometry.Insets;
@@ -44,8 +44,15 @@ public class ShowHBoxVBox extends Application {
     hBox.setStyle("-fx-background-color: gold");
     hBox.getChildren().add(new Button("Computer Science"));
     hBox.getChildren().add(new Button("Chemistry"));
-//    ImageView imageView = new ImageView(new Image("image/us.gif"));
-//    hBox.getChildren().add(imageView);
+    ImageView imageView = new ImageView();
+    try {
+//      Image image = new Image(getClass().getResourceAsStream("/resources/images/cat-computer.gif"));
+        Image image = new Image("/resources/images/cat-computer.gif");
+        imageView.setImage(image);
+    } catch (Exception e) {
+        System.out.println(e);
+    }
+    hBox.getChildren().add(imageView);
     return hBox;
   }
   
