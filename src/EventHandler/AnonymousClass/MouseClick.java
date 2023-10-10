@@ -32,24 +32,25 @@ public class MouseClick extends Application {
         circle.setRadius(50);
         circle.setStroke(Color.BLACK);
         circle.setFill(Color.BEIGE);
-        
-        EventHandler<MouseEvent> eventHandler = new EventHandler<MouseEvent>(){
-            
-        @Override
-        public void handle(MouseEvent t) {
-                
-            if(circle.getFill() == Color.BEIGE){
-                circle.setFill(Color.BLUE);
-            }else{
-                circle.setFill(Color.BEIGE);
+
+        //Anonymous Class
+        EventHandler<MouseEvent> eventHandler = new EventHandler<MouseEvent>() {
+
+            @Override
+            public void handle(MouseEvent t) {
+
+                if (circle.getFill() == Color.BEIGE) {
+                    circle.setFill(Color.BLUE);
+                } else {
+                    circle.setFill(Color.BEIGE);
+                }
+
             }
 
-        }
-            
         };
-        
+
         circle.setOnMouseClicked(eventHandler);
-        
+
         pane.getChildren().add(circle); // Add circle to the pane
 
         // Create a scene and place it in the stage

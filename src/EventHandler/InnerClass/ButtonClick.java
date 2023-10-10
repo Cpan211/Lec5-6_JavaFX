@@ -19,6 +19,8 @@ import javafx.stage.Stage;
  */
 public class ButtonClick extends Application {
     
+    
+    private  Button btn;
      /**
      * @param args the command line arguments
      */
@@ -34,13 +36,15 @@ public class ButtonClick extends Application {
         primaryStage.setTitle("Button Click Example");
 
         // Create a button
-        Button btn = new Button("Click me!");
+        btn = new Button("Click me!");
 
-        // Create an instance of the EventHandler inner class
+//         Create an instance of the EventHandler inner class
          ButtonClickHandler handler = new ButtonClickHandler();
 
         // Set the handler for the button click event
         btn.setOnAction(handler);
+        
+        
         btn.layoutXProperty().bind(pane.widthProperty().subtract(btn.widthProperty()).divide(2));
         btn.layoutYProperty().bind(pane.heightProperty().subtract(btn.heightProperty()).divide(2));
 
@@ -56,13 +60,13 @@ public class ButtonClick extends Application {
     }
 
 
-
     private class ButtonClickHandler implements EventHandler<ActionEvent>{
 
         @Override
         public void handle(ActionEvent t) {
-                
-            System.out.println("This button is clickable");
+            
+            if(t.getSource() == btn)
+                System.out.println("This button is clickable");
 
         }
     }

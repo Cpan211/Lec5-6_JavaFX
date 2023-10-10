@@ -62,4 +62,7 @@ public class TextMoveExample extends Application {
         launch(args);
     }
     
+    
+    private void drawLine(){
+    }
 }
